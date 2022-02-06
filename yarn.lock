@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@popperjs/core@^2.10.2":
+  "integrity" "sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.2.tgz"
+  "version" "2.11.2"
+
 "@timer/detect-port@1.1.3":
   "integrity" "sha1-E4Or1n+aXWg99SdvipLWC9+au5A="
   "resolved" "https://registry.npmjs.org/@timer/detect-port/-/detect-port-1.1.3.tgz"
@@ -1139,6 +1144,11 @@
   "version" "2.10.1"
   dependencies:
     "hoek" "2.x.x"
+
+"bootstrap@^5.1.3":
+  "integrity" "sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.1.3.tgz"
+  "version" "5.1.3"
 
 "boxen@^0.6.0":
   "integrity" "sha1-g2TUJIrDT/DvGy8r9JpsYM4NgbY="
