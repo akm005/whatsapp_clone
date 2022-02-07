@@ -8,7 +8,7 @@ class View extends Component {
         let view;
         view = (visibility) ? <ViewChatHistory selectedContactChat={ this.props.selectedContact } /> : <ViewWhatsapp />
         return(
-         <div className="view"  style={{"display": "flex", "flexGrow": "1","flex-direction": "column"}}>
+         <div className="view d-flex"  style={{ "flexGrow": "1",flexDirection: "column"}}>
                 { view }
           </div>
         )
