@@ -4,12 +4,11 @@ class ViewChatHistory extends Component{
     render(){
         console.log(this.props.selectedContactChat);
         return(
-
-            <div className="view--chat">
+            <div className='w-100'>
                 {
                     this.props.selectedContactChat.map( (contact) =>{
-                        return (
-                            <header key={contact.id}>
+                        return (<div className="view--chat" style={{"display": "flex", "flexGrow": "1","flex-direction": "column" }}>
+                            <header key={contact.id} > 
                                 <div className="user-details">
                                     <img src={contact.profilePhoto} style={{"width": "45px", "height": "40px", "borderRadius": "100%", "marginRight": "20px"}} alt={""}/>
                                     <div className="user-details-name">
@@ -24,6 +23,9 @@ class ViewChatHistory extends Component{
                                 </nav>
 
                             </header>
+                            <div className='chat'>chat area</div>
+                            <footer>Anup kumar singh</footer>
+                            </div>
                         )
                     })
                 }

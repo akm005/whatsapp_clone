@@ -2,6 +2,7 @@ import React, { Component }     from 'react';
 import ChatList                 from './components/containers/ChatList';
 import View                     from './components/containers/View';
 import './App.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
   constructor(props){
@@ -142,6 +143,7 @@ class App extends Component {
     const { contacts, chatHistoryVisible, selectedContactChat } = this.state;
     return (
       <div className="app">
+        
           <ChatList contacts={ contacts } getChats={ this.getChats }/>
           <View visibility={ chatHistoryVisible } selectedContact={ selectedContactChat }/>
       </div>
