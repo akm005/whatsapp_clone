@@ -2,7 +2,6 @@ import React, { Component }     from 'react';
 import ChatList                 from './components/containers/ChatList';
 import View                     from './components/containers/View';
 import './App.css';
-// import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
   constructor(props){
@@ -133,7 +132,7 @@ class App extends Component {
       ],
       chatHistoryVisible: false,
       selectedChat: 0,
-      selectedContactChat: []
+      selectedContactChat: null
     }
 
   }
@@ -143,7 +142,6 @@ class App extends Component {
     const { contacts, chatHistoryVisible, selectedContactChat } = this.state;
     return (
       <div className="app">
-        
           <ChatList contacts={ contacts } getChats={ this.getChats }/>
           <View visibility={ chatHistoryVisible } selectedContact={ selectedContactChat }/>
       </div>
@@ -155,10 +153,10 @@ class App extends Component {
      event.preventDefault();
 
      const { contacts, selectedContactChat } = this.state;
-     let chat = []
+     let chat =null
      contacts.filter( (contact) => {
         if (contact.id === id) {
-          return chat = [...chat, contact]
+          return chat = {...chat, contact}
         }
      })
 

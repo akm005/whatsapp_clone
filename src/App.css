@@ -7,7 +7,7 @@
 }
 
 .chatlist--header__image img {
-    width: 48px;
+    width: 40px;
     border-radius: 100%;
 }
 
@@ -29,18 +29,18 @@ header .user-details,
     flex-direction: column;
 }
 
-.view--chat header {
+.view--chat .header {
     display: flex;
     justify-content: space-between;
     background: #eee;
-    padding: 18px 40px;
+    padding: 15px 40px;
 }
-.view--chat footer {
+.view--chat .footer {
     display: flex;
     justify-content: space-between;
     background: #eee;
-    padding: 21px 40px;
-    position: fixed;
+    padding: 15px 15px;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -69,6 +69,11 @@ header .user-details,
 .view--chat {
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+}
+input,input:focus-visible{
+    border: none;
+    outline: transparent;
 }
 
 .chatlist {
