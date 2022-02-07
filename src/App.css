@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Montsserat', sans-serif;
+    font-family: "Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif";
     color: #4b4b4b;
     box-sizing: border-box;
 }
@@ -33,9 +33,17 @@ header .user-details,
     display: flex;
     justify-content: space-between;
     background: #eee;
-    padding: 21px 40px;
+    padding: 18px 40px;
 }
-
+.view--chat footer {
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    padding: 21px 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 .view--chat__history .chats {
     height: 524px;
     overflow-y: scroll;
@@ -83,8 +91,13 @@ header .user-details,
 }
 
 .chatlist--header__icons {
-    margin-top: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 25px;
+    align-content: center;
+
 }
+.chatlist--header_icon
 
 .chatlist--header__icons .material-icons {
     cursor: pointer;
