@@ -9,7 +9,7 @@ class ChatList extends Component {
             <div className="chatlist">
             
             <ChatListHeader />
-            <ChatListSearch />
+            <ChatListSearch search={this.props.search} />
             <List contacts={this.props.contacts} getChats={this.props.getChats}/>
             
           </div>

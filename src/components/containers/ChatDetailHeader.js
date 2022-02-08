@@ -10,7 +10,7 @@ class ChatDetailHeader extends Component {
     // }
     
     render() {
-       let  {contact} =  this.props.selectedContactChat
+       let  contact =  this.props.selectedContactChat
         return (
             <div className="header" key={contact.id}>
                     <div className="user-details d-flex">

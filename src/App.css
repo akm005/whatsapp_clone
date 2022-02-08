@@ -119,12 +119,15 @@ input,input:focus-visible{
     border-radius: 5px;
     border: 1px solid #f6f6f6;
     box-sizing: border-box;
-    padding-left: 35px;
-    width: calc(100% - 28px);
-    margin: 7px 12px;
+    padding-left: 60px;
+    width: calc(100% - 23px);
+    margin: 7px 7px;
+    margin-left: -39px;
     font-size: 14px;
 }
-
+.search--icon{
+    margin-left: 18px;
+}
 .list {
     overflow-y: scroll;
     margin: 0 auto;
