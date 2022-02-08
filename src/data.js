@@ -3,6 +3,8 @@ export const data = [ {
     "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
     "name": "Gbenga",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -15,6 +17,8 @@ export const data = [ {
     "profilePhoto" : "http://loremflickr.com/g/320/240/paris",
     "name": "Tayo",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -27,6 +31,8 @@ export const data = [ {
     "profilePhoto" : "https://s.yimg.com/pw/images/buddyicon11_r.png#76029035@N02",
     "name": "uno",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -39,6 +45,8 @@ export const data = [ {
     "profilePhoto" : "http://loremflickr.com/320/240/business",
     "name": "snapshop",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -51,6 +59,8 @@ export const data = [ {
     "profilePhoto" : "http://loremflickr.com/320/240/computers",
     "name": "Taiwo jide",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -63,6 +73,8 @@ export const data = [ {
     "profilePhoto" : "http://loremflickr.com/320/240",
     "name": "Daniel anthony",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -75,6 +87,8 @@ export const data = [ {
     "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
     "name": "Diagram",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -87,6 +101,8 @@ export const data = [ {
     "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
     "name": "Noob2Hackers",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -99,6 +115,8 @@ export const data = [ {
     "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
     "name": "Frontednd Code",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",
@@ -111,6 +129,8 @@ export const data = [ {
     "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
     "name": "Whogorent",
     "lastMessage": "Bro smart: what i think this should be...",
+    "isRead":true,
+    "unreadMessageCount":0,
     "chats": [
       {
         "activeUser" : "i will come to school soon",

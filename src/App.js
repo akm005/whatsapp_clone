@@ -12,23 +12,39 @@ class App extends Component {
       chatHistoryVisible: false,
       selectedChat: 0,
       selectedContactChat: null,
-      displayContact: data
+      displayContact: {contacts:data, messages:[]},
+      isSearchActive:false,
     }
   }
 
   componentDidMount(){
   }
   handleChangeSearchUser = (e)=>{
-    
-    let newData = this.state.contacts.filter((ele)=>ele.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
-    this.setState({displayContact:[...newData]})
+    let messageResult = []
+    let chatContact = this.state.contacts.filter((ele)=>ele.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
+  if (e.target.value){
+    this.state.contacts.forEach((ele)=>ele.chats.forEach(
+      (msg)=>{
+
+        if (msg.activeUser.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())){
+          messageResult.push({user:ele, chat :msg.activeUser})
+        }
+        if (msg.receiver.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())){
+          messageResult.push({user:ele, chat :msg.receiver})
+        }
+      }
+    ))
+  }
+
+
+    this.setState({displayContact:{contacts:[...chatContact],messages:[...messageResult]},isSearchActive:e.target.value ? true:false})
   }
 
   render() {
-    const { chatHistoryVisible, selectedContactChat, displayContact } = this.state;
+    const { chatHistoryVisible, selectedContactChat, displayContact,isSearchActive } = this.state;
     return (
       <div className="app">
-          <ChatList contacts={ displayContact } getChats={ this.getChats } search={this.handleChangeSearchUser}/>
+          <ChatList contacts={ displayContact } getChats={ this.getChats } search={this.handleChangeSearchUser} isSearchActive={isSearchActive}/>
           <View visibility={ chatHistoryVisible } selectedContact={ selectedContactChat }/>
       </div>
     );
