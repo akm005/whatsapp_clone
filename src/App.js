@@ -1,167 +1,70 @@
-import React, { Component }     from 'react';
-import ChatList                 from './components/containers/ChatList';
-import View                     from './components/containers/View';
+import React, { Component } from 'react';
+import ChatList from './components/containers/ChatList';
+import View from './components/containers/View';
 import './App.css';
+import { data } from './data'
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      contacts: [
-        {
-          "id": 1,
-          "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
-          "name": "Gbenga",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "profilePhoto" : "http://loremflickr.com/g/320/240/paris",
-          "name": "Tayo",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "profilePhoto" : "https://s.yimg.com/pw/images/buddyicon11_r.png#76029035@N02",
-          "name": "uno",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "profilePhoto" : "http://loremflickr.com/320/240/business",
-          "name": "snapshop",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "profilePhoto" : "http://loremflickr.com/320/240/computers",
-          "name": "Taiwo jide",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "profilePhoto" : "http://loremflickr.com/320/240",
-          "name": "Daniel anthony",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
-          "name": "Diagram",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 8,
-          "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
-          "name": "Noob2Hackers",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 9,
-          "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
-          "name": "Frontednd Code",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "profilePhoto" : "http://www.joshfinnie.com/assets/images/josh-tm.jpeg",
-          "name": "Whogorent",
-          "lastMessage": "Bro smart: what i think this should be...",
-          "chats": [
-            {
-              "activeUser" : "i will come to school soon",
-              "receiver":  "i will be there too.. just give me few minutes"
-            }
-          ]
-        }
+	constructor(props) {
+		super(props);
+		this.state = {
+			contacts: data,
+			chatHistoryVisible: false,
+			selectedChat: 0,
+			selectedContactChat: null,
+			displayContact: { contacts: data, messages: [], celement:"" },
+			isSearchActive: false,
+		}
+	}
 
-      ],
-      chatHistoryVisible: false,
-      selectedChat: 0,
-      selectedContactChat: []
-    }
+	componentDidMount() {
+	}
 
-  }
+	getKey = () => {
+		return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+		// eslint-disable-next-line
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+		);
+	}
+
+	handleChangeSearchUser = (e) => {
+		let colorelement = e.target.value
+		let messageResult = []
+		let chatContact = this.state.contacts.filter((ele) => ele.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
+		if (e.target.value) {
+			this.state.contacts.forEach((ele) => ele.chats.forEach(
+				(msg) => {
+
+					if (msg.activeUser.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())) {
+						messageResult.push({ user: ele, chat: msg.activeUser, uuid: this.getKey() })
+					}
+					if (msg.receiver.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())) {
+						messageResult.push({ user: ele, chat: msg.receiver, uuid: this.getKey() })
+					}
+				}
+			))
+		}
 
 
-  render() {
-    const { contacts, chatHistoryVisible, selectedContactChat } = this.state;
-    return (
-      <div className="app">
-          <ChatList contacts={ contacts } getChats={ this.getChats }/>
-          <View visibility={ chatHistoryVisible } selectedContact={ selectedContactChat }/>
-      </div>
-    );
-  }
+		this.setState({ displayContact: { contacts: [...chatContact], messages: messageResult , celement:colorelement}, isSearchActive: e.target.value ? true : false })
+	}
+
+	render() {
+		const { chatHistoryVisible, selectedContactChat, displayContact, isSearchActive } = this.state;
+		return (
+			<div className="app">
+				<ChatList contacts={displayContact} getChats={this.getChats} search={this.handleChangeSearchUser} isSearchActive={isSearchActive} />
+				<View visibility={chatHistoryVisible} selectedContact={selectedContactChat} />
+			</div>
+		);
+	}
 
 
-   getChats = (event, id) => {
-     event.preventDefault();
-
-     const { contacts, selectedContactChat } = this.state;
-     let chat = []
-     contacts.filter( (contact) => {
-        if (contact.id === id) {
-          return chat = [...chat, contact]
-        }
-     })
-
-     this.setState({ chatHistoryVisible: true, selectedChat: id, selectedContactChat: chat });
-   }
+	getChats = (event, id) => {
+		event.preventDefault();
+		let [chat] = this.state.contacts.filter((contact) => contact.id === id)
+		this.setState({ chatHistoryVisible: true, selectedChat: id, selectedContactChat: chat });
+	}
 
 }
 
