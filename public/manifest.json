@@ -1,10 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Whatsapp_web_clone",
+  "name": "Clone of Whatsapp Web",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "favicon.png",
+      "sizes": "16x16" ,
       "type": "image/png"
     }
   ],
